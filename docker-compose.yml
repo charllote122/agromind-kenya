@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: agromind-db
+    environment:
+      POSTGRES_DB: agromind
+      POSTGRES_USER: agromind
+      POSTGRES_PASSWORD: agromind
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./backend/app/db/migrations:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U agromind"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:
