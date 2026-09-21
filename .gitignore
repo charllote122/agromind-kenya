@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# Node
+node_modules/
+dist/
+build/
+.next/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Data (large files)
+data/knowledge_base/*.pdf
+data/knowledge_base/*.docx
+ml/artifacts/*.pkl
+ml/artifacts/*.h5
+ml/artifacts/*.pt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Docker
+pgdata/
